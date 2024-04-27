@@ -1,0 +1,1 @@
+Libro@ISBN005@Il codice da Vinci@2003@350@Dan Brown@Thriller#Libro@ISBN004@L'ombra del vento@2001@400@Carlos Ruiz Zafón@Romanzo#Rivista@ISBN003@Espresso@2022@70@SEMESTRALE#Rivista@ISBN002@Focus@2023@60@MENSILE#Rivista@ISBN001@Wired@2024@50@SETTIMANALE#Libro@ISBN006@Cronache del ghiaccio e del fuoco@2011@600@George R.R. Martin@Fantasy
