@@ -14,8 +14,13 @@ public class Catalogo {
         this.catalogo = new HashMap<>();
     }
 
-    public void aggiungiElemento(ElementoCatalogo elemento) {
-       catalogo.put(elemento.getCodiceISBN(), elemento);
+    public void aggiungiElemento(ElementoCatalogo elemento) throws CatalogoException {
+        if(catalogo.containsKey(elemento.getCodiceISBN())) {
+            throw new CatalogoException("Non è stato aggiunto nessun elemento, codice ISBN già presente.");
+        } else {
+            catalogo.put(elemento.getCodiceISBN(), elemento);
+        }
+
     }
 
 

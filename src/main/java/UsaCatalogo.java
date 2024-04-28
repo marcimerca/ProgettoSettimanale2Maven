@@ -22,19 +22,32 @@ public class UsaCatalogo {
         Libro libro2 = new Libro("ISBN005", "Il codice da Vinci", "2003", 350, "Dan Brown", "Thriller");
         Libro libro3 = new Libro("ISBN006", "Cronache del ghiaccio e del fuoco", "2011", 600, "George R.R. Martin", "Fantasy");
 
-        catalogo.aggiungiElemento(rivista1);
-        catalogo.aggiungiElemento(rivista2);
-        catalogo.aggiungiElemento(rivista3);
-        catalogo.aggiungiElemento(libro1);
-        catalogo.aggiungiElemento(libro2);
-        catalogo.aggiungiElemento(libro3);
+        try {
+            catalogo.aggiungiElemento(rivista1);
+            catalogo.aggiungiElemento(rivista2);
+            catalogo.aggiungiElemento(rivista3);
+            catalogo.aggiungiElemento(libro1);
+            catalogo.aggiungiElemento(libro2);
+            catalogo.aggiungiElemento(libro3);
+        } catch (CatalogoException e) {
+            logger.error(e.getMessage());
+        }
+
+
 
         System.out.println(catalogo);
 
-        // Qui ho fatto varie prove per vedere il funzionamento delle eccezioni
+        // Qui ho fatto varie prove per vedere il funzionamento dei metodi e delle eccezioni
+
+        Libro libro4 = new Libro("ISBN006", "Cronache del ghiaccio e del fuoco", "2011", 600, "George R.R. Martin", "Fantasy");
+        try {
+            catalogo.aggiungiElemento(libro4);
+        } catch (CatalogoException e) {
+            logger.error(e.getMessage());
+        }
 
         try {
-            catalogo.cercaPerAnnoPubblicazione("2009");
+            System.out.println(catalogo.cercaPerAnnoPubblicazione("2022"));
         } catch (CatalogoException e) {
             logger.error(e.getMessage());
         }
@@ -46,7 +59,7 @@ public class UsaCatalogo {
         }
 
         try {
-            System.out.println(catalogo.ricercaPerISBN("ISBN00111"));
+            System.out.println(catalogo.ricercaPerISBN("ISBN005"));
         } catch (CatalogoException e) {
             logger.error(e.getMessage());
         }
